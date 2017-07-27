@@ -1,0 +1,119 @@
+<html>
+<head>
+<script src = 'https://cdn.bootcss.com/jquery/3.2.1/jquery.js'></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+            width: 284px;
+            height: 220px;
+        }
+        .layout{
+            width: 600px;
+            margin: 0 auto;
+        }
+        .container:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class = 'layout'>
+    <ul class ='container'>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/1.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/2.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/3.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/4.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/5.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/6.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/7.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/8.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/9.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/10.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/11.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/12.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/13.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/14.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/15.jpg'></li>
+        <li><img src ='http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg' data-src = 'http://cdn.jirengu.com/book.jirengu.com/img/16.jpg'></li>
+    </ul>
+    </div>
+</body>
+
+<script>
+function Exposure($target, callback){
+	this.$target = $target;
+	this.callback = callback;
+	this.bind();
+}
+Exposure.prototype.bind = function($target){
+	var _this = this;
+	var clock;
+	$(window).on('scroll', function(){
+		if(clock){
+			clearTimeout(clock);
+		}
+		clock = setTimeout(function(){
+			console.log('hellow');
+			_this.check();
+		}, 300);
+	})
+}
+Exposure.prototype.check = function(){
+	if(this.isVisible(this.$target)){
+		this.callback(this.$target);
+	}
+}
+Exposure.prototype.isVisible = function(){
+    var windowHeight = $(window).height(),
+        scrollTop = $(window).scrollTop(),
+        offsetTop = this.$target.offset().top,
+        nodeHeight = this.$target.height();
+    if(windowHeight + scrollTop > offsetTop && scrollTop < offsetTop + nodeHeight){
+        return true;
+    }else{
+        return false;
+  }
+}
+
+
+new Exposure($('.hello'), function(){
+	$('.hello').text($('.hello').text() + 'world');
+});
+
+var Lazy = (function(){
+    return {
+        init: function($targets, callback){
+            $targets.each(function(index, $target){
+                new Exposure($($target), callback);
+            })
+        }
+    }
+})()
+Lazy.init($('.container img'), function($node){
+    showImg($node);
+})
+function showImg($img){
+		var imgUrl = $img.attr('data-src');
+		$img.attr('src', imgUrl);
+}
+    
+    
+    
+    
+    
+    
+
+</script>
+</html>
